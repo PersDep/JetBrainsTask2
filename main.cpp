@@ -9,9 +9,12 @@ int main() {
     int power = 999;
     int base = 10;
 
-    int res = int(ceil((log(base) * power + log(denominator)) / log(phiNumerator)));
+    //According to Binet's Formula: fibNum_n = pow(phiNumerator, n) / denominator >= pow(base, power)
+    //After taking log from both sides we get log(phiNumerator) * n = log(base) * power + log(denominator)
+    //Now we can easily solve it:
+    int n = int(ceil((log(base) * power + log(denominator)) / log(phiNumerator)));
 
-    cout << res << endl;
+    cout << n << endl;
 
     return 0;
 }
